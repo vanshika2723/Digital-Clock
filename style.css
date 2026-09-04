@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: "Segoe UI", Arial, sans-serif;
+background:
+radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.35), transparent 35%),
+radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.3), transparent 35%),
+linear-gradient(135deg, #020617, #0f172a, #1e1b4b);
+overflow: hidden;
+}
+
+/* Decorative background circles */
+body::before,
+body::after {
+content: "";
+position: absolute;
+border-radius: 50%;
+filter: blur(10px);
+opacity: 0.5;
+}
+
+body::before {
+width: 220px;
+height: 220px;
+background: #6366f1;
+top: 10%;
+left: 10%;
+}
+
+body::after {
+width: 250px;
+height: 250px;
+background: #a855f7;
+bottom: 8%;
+right: 10%;
+}
+
+.clock-container {
+position: relative;
+z-index: 2;
+width: min(90%, 650px);
+padding: 50px 40px;
+text-align: center;
+
+
+background: rgba(255, 255, 255, 0.08);
+border: 1px solid rgba(255, 255, 255, 0.18);
+border-radius: 30px;
+
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+
+box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
+
+}
+
+h1 {
+color: #ffffff;
+font-size: 42px;
+font-weight: 700;
+letter-spacing: 1px;
+margin-bottom: 30px;
+
+text-shadow: 0 0 20px rgba(129, 140, 248, 0.8);
+
+
+}
+
+h1::after {
+content: "";
+display: block;
+width: 70px;
+height: 4px;
+margin: 12px auto 0;
+border-radius: 10px;
+background: linear-gradient(90deg, #6366f1, #c084fc);
+}
+
+/* Clock */
+#clock {
+display: inline-block;
+min-width: 100%;
+
+
+padding: 28px 30px;
+border-radius: 20px;
+
+color: #ffffff;
+background: rgba(0, 0, 0, 0.25);
+
+border: 1px solid rgba(255, 255, 255, 0.12);
+
+font-family: "Courier New", monospace;
+font-size: clamp(45px, 9vw, 78px);
+font-weight: bold;
+letter-spacing: 6px;
+
+text-shadow:
+    0 0 10px #ffffff,
+    0 0 25px #818cf8,
+    0 0 45px rgba(129, 140, 248, 0.8);
+
+box-shadow:
+    inset 0 0 25px rgba(99, 102, 241, 0.12),
+    0 10px 30px rgba(0, 0, 0, 0.25);
+
+transition: all 0.3s ease;
+
+
+}
+
+#clock:hover {
+transform: translateY(-5px) scale(1.02);
+
+
+box-shadow:
+    inset 0 0 30px rgba(99, 102, 241, 0.2),
+    0 15px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(129, 140, 248, 0.25);
+
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+
+.clock-container {
+    padding: 35px 20px;
+    border-radius: 24px;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+#clock {
+    padding: 25px 15px;
+    font-size: 38px;
+    letter-spacing: 3px;
+    border-radius: 16px;
+}
+
+
+}
